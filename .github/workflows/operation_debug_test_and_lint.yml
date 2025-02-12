@@ -1,0 +1,14 @@
+name: Operation Debug and Test
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  workflow_call:
+
+jobs:
+  lint:
+    name: Lint debug variant
+    uses: ./.github/workflows/job_lint_debug.yml
+  test:
+    name: Test debug variant
+    uses: ./.github/workflows/job_test_debug.yml
